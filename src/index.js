@@ -1,11 +1,60 @@
 // DO WHATEVER YOU WANT HERE
 
-const createEnumerableProperty = () => {};
-const createNotEnumerableProperty = () => {};
-const createProtoMagicObject = () => {};
-const incrementor = () => {};
-const asyncIncrementor = () => {};
-const createIncrementer = () => {};
+const createEnumerableProperty = () => {
+    return 'test';
+};
+const createNotEnumerableProperty = () => {
+    return Symbol('Test');
+};
+const createProtoMagicObject = () => {
+    const func = () => {
+    };
+
+    const result = new func();
+    result.prototype.__proto__ = func;
+
+    return func;
+};
+
+const incrementor = () => {
+    if(!incrementor.counter) {
+        incrementor.counter = 1;
+    } else {
+        incrementor.counter++;
+    }
+    
+
+    const innerFunc = () => {
+        incrementor.counter++; 
+        return innerFunc
+    };
+
+    innerFunc.toString = () => {
+        return incrementor.counter;
+    }
+
+    return innerFunc
+};
+
+const asyncIncrementor = () => {
+    return new Promise((resolve) => {
+        if(!asyncIncrementor.counter) {
+            asyncIncrementor.counter = 1;
+        } else {
+            asyncIncrementor.counter++;
+        }
+
+        resolve(asyncIncrementor.counter)
+    })
+};
+
+const createIncrementer = () => {
+    function* incrementor() {
+
+    }
+
+    
+};
 
 // return same argument not earlier than in one second, and not later, than in two
 const returnBackInSecond = () => {};
