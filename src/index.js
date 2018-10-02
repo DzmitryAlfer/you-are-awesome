@@ -83,7 +83,9 @@ const createSerializedObject = () => {
     return new String('Hello World');
 };
 const toBuffer = () => {};
-const sortByProto = () => {};
+const sortByProto = (array) => {
+    return array.sort();
+};
 
 exports.createEnumerableProperty = createEnumerableProperty;
 exports.createNotEnumerableProperty = createNotEnumerableProperty;
