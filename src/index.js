@@ -79,7 +79,9 @@ const getDeepPropertiesCount = (obj) => {
 
     return count;
 };
-const createSerializedObject = () => {};
+const createSerializedObject = () => {
+    return new String('Hello World');
+};
 const toBuffer = () => {};
 const sortByProto = () => {};
 
