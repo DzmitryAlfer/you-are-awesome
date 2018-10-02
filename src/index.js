@@ -7,12 +7,8 @@ const createNotEnumerableProperty = () => {
     return Symbol('Test');
 };
 const createProtoMagicObject = () => {
-    const func = () => {
-    };
-
-    const result = new func();
-    result.prototype.__proto__ = func;
-
+    const func = new Function();
+    func.__proto__ = func.prototype;
     return func;
 };
 
